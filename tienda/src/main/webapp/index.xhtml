@@ -2,7 +2,8 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<meta charset="utf-8" name="viewport"
 		content="width=device-width, initial-scale=1"
@@ -10,12 +11,94 @@
 	<title>Plantilla Básica JSF</title>
 </h:head>
 
+
+<style>
+    .product-item .product-item-content {
+        border: 1px solid var(--surface-d);
+        border-radius: 3px;
+        margin: .3rem;
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    .product-item .product-image {
+        width: 50%;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+    }
+</style>
+
+
+
 <h:body style="background: #F2F3F4;">
-	<h2>
-		<h:outputText value="Editar Cliente" style="margin-left:45%"></h:outputText>
-	</h2>
-	<a href=""></a>
+	<h1>
+		<h:outputText value="Orión Store" style="margin-left:45%; font-family: fantasy;"></h:outputText>
+	</h1>
 	
-	<p:commandButton action="#{carritoControlador.CRUD()}" value="Editar" ></p:commandButton>	
+	
+	
+	
+
+<h:form id="form">
+
+<p:commandButton style="padding:10px;" action="catalogo.xhtml?faces-redirect=true" value="Catalogo de Productos"/>	
+<p:commandButton style="padding:10px; margin-left:20px;" action="admin.xhtml?faces-redirect=true" value="Admin"/>	
+<div class="card">
+        <p:carousel circular="true">
+            <f:facet name="header">
+                <h2 style="font-family: fantasy; font-size">BIENVENIDO!!!</h2>
+            </f:facet>
+            <p:tab>
+                <p class="m-0 p-3">
+                    Pensamos en tu bienestar y en tu negocio como si fuera para nuestro bien propio y nos mantenemos alerta concentrados en sastifacer tus necesidades
+                    y objetivos marcados.
+                    Buscamos alternativas para bordear o superar los obstáculos y llegar hasta donde nos hemos propuesto. No nos rendimos nunca, tenemos muy en cuenta
+                    que nuestro principal objetivo como empresa es brindar productos al alcance de tu bolsillo y que sean de la mejor calidad.            
+                </p>
+            </p:tab>
+            <p:tab>
+                <p class="m-0 p-3">
+                    Somos flexibles a la hora de encontrar alternativas y adaptarnos a los acontecimientos. Somos disciplinados y actuamos con determinación. 
+                    Organizamos todas nuestras actividades con el fin de cumplir los tiempos de entrega. Trabajamos y seguimos trabajando hasta que consideramos que el trabajo está igual o más perfecto de lo acordado. 
+                    Resaltamos entre nuestras cualidades nuestra capacidad para resolver problemas, nuestras habilidades sociales de comunicación, nuestra creatividad y una buena predisposición para aprender, crecer y mejorar. Somos humildes y atentos, nos gusta nutrirnos de otras opiniones y puntos de vista diferentes, en definitiva, nos gusta provocar sinergias que enriquezcan nuestro trabajo día a día. 
+                    Nos gusta lo que hacemos y la ilusión siempre está inmersa en cada proyecto que tenemos entre manos. 
+                    Nuestro entusiasmo es una fuerza que pone el foco en conseguir los objetivos que nos marcamos.
+                </p>
+            </p:tab>
+            <p:tab>
+                <p class="m-0 p-3">
+                    Estamos perfectamente formados y profesionalizados en los servicios que ofrecemos y para seguir conservando nuestras habilidades nos mantenemos al día mediante formación constante. 
+                    Estamos a la última y siempre en alerta para conocer las necesidades, sugerencias  opiniones sobre el servicio que proporcionamos.
+                    !!
+                </p>
+            </p:tab>
+        </p:carousel>
+    </div>
+    
+    <div style="display:flex; width:1000px;">
+    	<div style="margin-left:20%; text-align:center;">
+    		<img src="https://vidcache.net:8161/static/3d2d0e3d94ab5b0c30adb5df98c2b83f059eaea6/rtx3090.jpg" width="500px"  height="300px"></img>
+    		<h4>	Tarjeta Grafica NVidia RTX 3090</h4>
+    	</div>
+    	<div style="padding-left:100px; text-align:center;">
+    		<img src="https://vidcache.net:8161/static/d64811d8363dfbae86c7f0409bebf5a17c6f5d84/tecladoLGPro.png"  width="500px"  height="300px"></img>
+    		<h4>Teclado Logitec GPro</h4>
+    	</div>
+    	
+    	
+    </div>
+    
+    <div style="display:flex; width:1000px;">
+    
+    	<div style="margin-left:20%; text-align:center;">
+    		<img src="https://vidcache.net:8161/static/dcc71db1f07d39621c197d547dd83151d289e0b7/asus-zenbook.webp" width="500px" height="300px"></img>
+    		<h4>Laptop Asis Zeenbook</h4>
+    	</div>
+    	<div style="padding-left:100px; text-align:center;">
+    		<img src="https://vidcache.net:8161/static/bd4fcdf2649ec2e02007c0bf9aaa4bf5b6b2b967/alienware m15R3.jpg"  width="500px"  height="300px"></img>
+    		<h4>Laptop Alienware M15R3</h4>
+    	</div>
+     </div>
+ 
+</h:form>
 </h:body>
 </html>

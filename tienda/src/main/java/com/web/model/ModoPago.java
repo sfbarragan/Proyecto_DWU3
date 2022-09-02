@@ -13,32 +13,24 @@ public class ModoPago {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_modopago;
-	
+	private Integer id_modopago;
 	@Column
 	private String nombre;
-	
-
-	public int getId_modopago() {
+	public Integer getId_modopago() {
 		return id_modopago;
 	}
-
-	public void setId_modopago(int id_modopago) {
+	public void setId_modopago(Integer id_modopago) {
 		this.id_modopago = id_modopago;
 	}
-
 	public String getNombre() {
 		return nombre;
 	}
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
 	@Override
 	public String toString() {
 		return "ModoPago [id_modopago=" + id_modopago + ", nombre=" + nombre + "]";
 	}
-	
 	
 }

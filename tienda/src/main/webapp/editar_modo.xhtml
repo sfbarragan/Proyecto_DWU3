@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Plantilla Básica JSF</title>
+</h:head>
+<h:body>
+	<h2 style="font-family: sans-serif; color: #5AB1FF; size: 50px">
+		<h:outputText value="Editar Modo Pago"></h:outputText>
+	</h2>
+	
+	<h:form>
+		<p:panelGrid columns="2">
+			<f:facet name="header">
+				<h:outputText value="Editar"></h:outputText>
+			</f:facet>
+			
+			<h:outputText value="Nombre Modo Pago"></h:outputText>
+			<p:inputText value="#{modopago.nombre}"></p:inputText>
+			
+			
+			<f:facet name="footer">
+				<p:commandButton action="#{modoPagoBean.actualizar(modopago)}" value="Actualizar"></p:commandButton>
+			</f:facet>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>

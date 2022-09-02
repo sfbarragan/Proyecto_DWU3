@@ -30,6 +30,9 @@ public class CarritoControlador {
 	}
 
 	
+	public String catalogo() {
+		return "/faces/catalogo.xhtml";
+	}
 	
 	public String guardar(Factura factura) {
 		facturaDAO.generarCompra(factura);

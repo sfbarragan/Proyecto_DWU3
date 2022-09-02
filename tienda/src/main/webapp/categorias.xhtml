@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Plantilla Básica JSF</title>
+</h:head>
+<h:body>
+	<div style="display: flex; justify-content: center;">
+		<h2 style="font-family: sans-serif; color: #5AB1FF; size: 50px">
+			<h:outputText value="LISTA CATEGORIAS"></h:outputText>
+		</h2>
+	</div>
+	
+	<h:form>
+		<div class="card">
+			<p:commandButton action="#{categoriasBean.nuevo()}" value="Nuevo" styleClass="ui-button-raised ui-button-flat" style="margin-bottom:20px"></p:commandButton>
+	
+			<p:dataTable value="#{categoriasBean.listaCategorias}" var="categorias"
+				border="1">
+				<p:column>
+				</p:column>
+				<p:column>
+					<f:facet name="header">Nombre Categoria</f:facet>
+					<h:outputText value="#{categorias.nombre_categoria}"></h:outputText>
+				</p:column>
+				<p:column>
+					<f:facet name="header">Descripcion</f:facet>
+					<h:outputText value="#{categorias.descripcion}"></h:outputText>
+				</p:column>
+				<p:column>
+					
+				</p:column>
+				<p:column>
+					<f:facet name="header">Eliminar</f:facet>
+					<p:commandButton action="#{categoriasBean.eliminar(categorias.id_categoria)}" value="Eliminar"></p:commandButton>
+				</p:column>
+			</p:dataTable>
+		</div>
+	</h:form>
+		
+</h:body>
+</html>

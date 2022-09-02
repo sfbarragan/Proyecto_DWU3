@@ -26,16 +26,8 @@ public class Factura {
 	private Date fecha;
 	@Column
 	private String numeroFactura;
+
 	
-	private List<Detalle> detalleCompras;
-	
-	
-	public List<Detalle> getDetalleCompras() {
-		return detalleCompras;
-	}
-	public void setDetalleCompras(List<Detalle> detalleCompras) {
-		this.detalleCompras = detalleCompras;
-	}
 	public int getId_factura() {
 		return id_factura;
 	}
