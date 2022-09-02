@@ -15,7 +15,7 @@ import com.web.model.Factura;
 
 @ManagedBean(name = "carritoControlador")
 @RequestScoped
-public class CarritoControlador {
+public class FacturaBean {
 	FacturaDAOImpl facturaDAO = new FacturaDAOImpl();
 	
 	
@@ -30,13 +30,15 @@ public class CarritoControlador {
 	}
 
 	
-	public String catalogo() {
-		return "/faces/catalogo.xhtml";
+	public String factura() {
+		return "/faces/factura.xhtml";
 	}
 	
 	public String guardar(Factura factura) {
 		facturaDAO.generarCompra(factura);
-		return "/faces/catalogo.xhtml";
+		return "/faces/factura.xhtml";
 	}
+	
+	
 }
 

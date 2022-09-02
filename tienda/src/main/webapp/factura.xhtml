@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Plantilla Básica JSF</title>
+</h:head>
+
+
+<h:body style="background: #F2F3F4;">
+
+
+	<div class="card" style="width:800px; margin-left:35%;">
+    <h:form>
+        <p:messages id="messages"/>
+        <h:panelGrid columns="2" cellpadding="7">
+            <h:outputLabel for="cedula" value="Cédula"/>
+            <p:inputText id="cedula" required="true"/>
+
+            <p:outputLabel for="producto" value="Producto"/>
+            <p:inputText id="producto" required="true" value="Laptop Alienware" disabled = "true"/>
+
+            <p:outputLabel for="cantidad" value="Cantidad"/>
+            <p:spinner id="cantidad" value="0"/>
+            
+            <p:outputLabel for="precio" value="Precio"/>
+            <p:spinner id="precio" value="1200" disabled = "true"/>
+            
+            
+            <p:outputLabel for="metodoPago" value="Metodo de Pago"/>
+             <h:selectOneMenu id="metodoPago" required="true" label="Text 3" style="min-width: 14rem">
+                    <f:selectItem itemLabel="Seleccione una" itemValue="" noSelectionOption="true"/>
+                    <f:selectItem itemLabel="Visa" itemValue="1"/>
+                    <f:selectItem itemLabel="Master Card" itemValue="2"/>
+                    <f:selectItem itemLabel="American Express" itemValue="3"/>
+                </h:selectOneMenu>
+
+            
+            <p:spacer />
+            
+	    </h:panelGrid>
+	    <p:commandButton style="padding:10px; width:200px; margin-top:100px; margin-left: 100px;" action="detalle.xhtml?faces-redirect=true" value="Confirmar Pago" styleClass="ui-button-outlined ui-button-secondary" />	
+	    </h:form>
+	</div>
+
+	
+	
+	</h:body>
+</html>

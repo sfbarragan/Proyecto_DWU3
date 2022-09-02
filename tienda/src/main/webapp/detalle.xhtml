@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Plantilla Básica JSF</title>
+</h:head>
+
+
+<h:body style="background: #F2F3F4;">
+	
+		<h:form id="form">
+		<div class="card" style="width:650px; margin-left:30%; border: 2px solid black; border-radius:20px;">
+		 <h:panelGrid columns="2" cellpadding="10" width="800px">
+		 
+		 	<h:outputLabel value="Detalle" style="font-weight: bold; font-size:20pt;"/>
+		 	<h:outputLabel value="Total" style="font-weight: bold; font-size:20pt;"/>
+		 	
+		 	
+		 	<h:outputLabel value="Laptop Alienware"/>
+		 	<h:outputLabel value="1200"/>
+		 	
+		 	<h:outputLabel />
+		 	<h:outputLabel value="IVA 12%"/>
+		 	
+		 	<h:outputLabel />
+		 	<h:outputLabel value="144"/>
+		 	
+		 	
+			<h:outputLabel value="Total" style="font-weight: bold; font-size:15pt;"/>
+		 	<h:outputLabel value="1344" style="font-weight: bold; font-size:15pt;"/>
+			
+		 </h:panelGrid>
+		 </div>
+		 <p:commandButton style="padding:10px; width:200px; margin-top:100px; margin-left:45%;" action="catalogo.xhtml?faces-redirect=true" value="Finalizar Compra" styleClass="rounded-button" />	
+		
+		</h:form>
+	
+	
+	
+	</h:body>
+</html>

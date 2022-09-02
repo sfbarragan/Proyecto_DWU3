@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="utf-8" name="viewport"
+		content="width=device-width, initial-scale=1"
+		http-equiv="X-UA-Conpatible" />
+	<title>Guardar producto</title>
+</h:head>
+<h:body>
+	<style>
+		body{
+			margin: 10px 40px;
+		}
+	</style>
+	<h:form>
+		<p:panel header="Generar nuevo producto">
+		<h:panelGrid columns="2" cellpadding="4">	
+			<f:facet name="header">
+				<h:outputText value="Nuevo producto"></h:outputText>
+			</f:facet>
+				
+			<h:outputText value="Nombre del producto"></h:outputText>
+			<p:inputText value="#{producto.nombre_producto}"></p:inputText>
+			
+			<h:outputText value="Precio"></h:outputText>
+			<p:inputText value="#{producto.precio}"></p:inputText>
+			
+			<h:outputText value="Stock"></h:outputText>
+			<p:inputText value="#{producto.stock}"></p:inputText>
+			
+			<h:outputText value="Categoría"></h:outputText>
+			<p:inputText value="#{producto.id_categoria}"></p:inputText>
+			
+			<h:outputText value="Estado"></h:outputText>
+			<p:inputText value="#{producto.estado}"></p:inputText>
+			
+			<f:facet name="footer">
+				<p:commandButton action="#{productoBean.guardarProducto(producto)}" value="Guardar producto"></p:commandButton>
+			</f:facet>
+		</h:panelGrid>
+			</p:panel>
+	</h:form>
+</h:body>
+</html>

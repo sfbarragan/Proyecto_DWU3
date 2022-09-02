@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import com.web.idao.IProductoDAO;
+import com.web.model.Categoria;
 import com.web.model.JPAUtil;
 import com.web.model.Producto;
 
@@ -18,7 +19,7 @@ public class ProductoDAOImpl implements IProductoDAO {
 	public List<Producto> obtenerProductos() {
 		List<Producto> listaProductos = new ArrayList<Producto>();
 		//sentencia JPQL 
-		Query query = entity.createQuery("SELECT p FROM producto p");
+		Query query = entity.createQuery("SELECT p FROM Producto p");
 		listaProductos = query.getResultList();
 		return listaProductos;
 	}
@@ -28,6 +29,8 @@ public class ProductoDAOImpl implements IProductoDAO {
 	@Override
 	public void guardarProducto(Producto producto) {
 		entity.getTransaction().begin();
+		Categoria oCategoria = entity.find(Categoria.class, producto.getId_categoria());
+		producto.setId_categoria(oCategoria);
 		entity.persist(producto);
 		entity.getTransaction().commit();
 		//JPAUtil.shutdown();
@@ -57,5 +60,13 @@ public class ProductoDAOImpl implements IProductoDAO {
 		entity.remove(oProducto);
 		entity.getTransaction().commit();
 	}
-
+		
+	@Override
+	public List<Categoria> obtenerCategorias() {
+		List<Categoria> listaCategorias = new ArrayList<Categoria>();
+		//sentencia JPQL 
+		Query query = entity.createQuery("SELECT c FROM Categoria c");
+		listaCategorias = query.getResultList();
+		return listaCategorias;
+	}
 }

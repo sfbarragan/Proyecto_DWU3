@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,17 +21,25 @@ public class Producto {
 	private int id_producto;
 	@Column
 	private String nombre_producto;
-	@Column
-	private double precio;
+	@Column(precision=6, scale=2)
+	private float precio;
 	@Column
 	private int stock;
-	@Column
-	private byte[] foto;
-	@Column
-	private int id_categoria;
+	@OneToOne
+	@JoinColumn(name = "id_categoria", referencedColumnName = "id_categoria")
+	private Categoria id_categoria;
 	@Column
 	private char estado;
+	@Lob
+	@Column
+	private byte[] foto;
 	
+	public byte[] getFoto() {
+		return foto;
+	}
+	public void setFoto(byte[] foto) {
+		this.foto = foto;
+	}
 	public int getId_producto() {
 		return id_producto;
 	}
@@ -41,10 +52,10 @@ public class Producto {
 	public void setNombre_producto(String nombre_producto) {
 		this.nombre_producto = nombre_producto;
 	}
-	public double getPrecio() {
+	public float getPrecio() {
 		return precio;
 	}
-	public void setPrecio(double precio) {
+	public void setPrecio(float precio) {
 		this.precio = precio;
 	}
 	public int getStock() {
@@ -53,16 +64,10 @@ public class Producto {
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
-	public byte[] getFoto() {
-		return foto;
-	}
-	public void setFoto(byte[] foto) {
-		this.foto = foto;
-	}
-	public int getId_categoria() {
+	public Categoria getId_categoria() {
 		return id_categoria;
 	}
-	public void setId_categoria(int id_categoria) {
+	public void setId_categoria(Categoria id_categoria) {
 		this.id_categoria = id_categoria;
 	}
 	public char getEstado() {
@@ -74,7 +79,7 @@ public class Producto {
 	@Override
 	public String toString() {
 		return "Producto [id_producto=" + id_producto + ", nombre_producto=" + nombre_producto + ", precio=" + precio
-				+ ", stock=" + stock + ", foto=" + Arrays.toString(foto) + ", id_categoria=" + id_categoria
-				+ ", estado=" + estado + "]";
+				+ ", stock=" + stock + ", id_categoria=" + id_categoria + ", estado=" + estado + ", foto="
+				+ Arrays.toString(foto) + "]";
 	}
 }
